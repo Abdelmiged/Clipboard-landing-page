@@ -1,0 +1,406 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* html,
+body {
+    height: 100vh;
+} */
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* !!!!!  CUSTOM CSS  !!!!! */
+
+
+:root {
+    /* Primary Colors */
+    --clr-primary-strong-cyan: hsl(171, 66%, 44%);
+    --clr-primary-light-blue: hsl(233, 100%, 69%);
+    --clr-primary-footer: hsl(220, 18%, 97%);
+
+
+    /* Neutral Colors */
+    --clr-neutral-dark-grayish-blue: hsl(210, 10%, 33%);
+    --clr-neutral-grayish-blue: hsl(201, 11%, 66%);
+    --clr-neutral-white: hsl(0, 0%, 100%);
+    --clr-neutral-strong-cyan-shadow: hsl(170, 65%, 38%);
+    --clr-neutral-light-blue-shadow: hsl(232, 65%, 58%);
+
+
+    /* Colors Active States */
+    --clr-active-state-button-one: hsl(171, 52%, 58%);
+    --clr-active-state-button-two: hsl(233, 100%, 77%);
+    --clr-active-state-info-span: hsl(170, 32%, 56%);
+
+
+    /* Font Weights */
+    --fw-regular: 400;
+    --fw-semibold: 600;
+
+
+    /* Font Family */
+    --ff-bai-jamjuree: 'Bai Jamjuree', sans-serif;
+
+
+    /* Padding */
+    --padding-container-mobile: 1rem;
+}
+
+body {
+    background-image: url('../images/bg-header-mobile.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 5rem;
+    font-family: var(--ff-bai-jamjuree);
+}
+
+.container,
+.sub-container,
+.image-text-container,
+.feature-container,
+.company-stack-container,
+footer,
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 375px;
+    margin: 0 auto 5rem;
+}
+
+.logo-container {
+    width: 125px;
+    margin-bottom: 4rem;
+}
+
+.logo-container > img,
+.image-container > img,
+.image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {
+    width: 85%;
+}
+
+.sub-container {
+    max-width: 340px;
+    text-align: center;
+    margin-bottom: 2.7em;
+}
+
+.text-container {
+    margin-bottom: 2.5em;
+}
+
+.feature-container {
+    margin-bottom: 1em;
+}
+
+.social-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-container > span,
+.text-container > span,
+.feature-container > span {
+    display: block;
+    font-size: 1.6em;
+    margin-bottom: .8em;
+    line-height: 1.2;
+    color: var(--clr-neutral-dark-grayish-blue);
+    font-weight: var(--fw-semibold);
+}
+
+.sub-container > span[main-heading] {
+    font-size: 1.95em;
+}
+
+.sub-container > p,
+.text-container > p,
+.feature-container > p {
+    font-size: 1em;
+    color: var(--clr-neutral-grayish-blue);
+    font-weight: var(--fw-regular);
+    max-width: 30ch;
+}
+
+.button-container > button {
+    width: 17em;
+    padding: .5em;
+    border-radius: 1.875em;
+    border: none;
+    color: var(--clr-neutral-white);
+    font-weight: var(--fw-semibold);
+    transition: all .2s ease-in-out;
+}
+
+@media (max-width: 374px) {
+    .button-container > button {
+        width: 100%;
+    }
+}
+
+.button-container > button:hover {
+    cursor: pointer;
+}
+
+.button-container > button:first-child {
+    margin-bottom: 1em;
+    background: var(--clr-primary-strong-cyan);
+    box-shadow: 0 .125em .1em .125em var(--clr-neutral-strong-cyan-shadow);
+}
+
+.button-container > button:first-child:hover {
+    background: var(--clr-active-state-button-one);
+}
+
+.button-container > button:last-child {
+    background: var(--clr-primary-light-blue);
+    box-shadow: 0 .125em .1em .125em var(--clr-neutral-light-blue-shadow);
+}
+
+.button-container > button:last-child:hover {
+    background: var(--clr-active-state-button-two);
+}
+
+.image-container-first {
+    margin-bottom: 2em;
+}
+
+.text-container > span,
+.feature-container > span {
+    font-size: 1.3em;
+    margin-bottom: .4em;
+}
+
+.image-container-second {
+    margin-bottom: 5em;
+}
+
+.feature-container > img {
+    margin: 1.6em 0;
+}
+
+.image {
+    margin-bottom: 4em;
+}
+
+footer {
+    max-width: 100%;
+    margin: 0;
+    background: var(--clr-primary-footer);
+    padding: 2.5rem 0;
+}
+
+footer > .logo-container {
+    width: 60px;
+    margin-bottom: 2em;
+}
+
+.info-container {
+    margin-bottom: 2em;
+}
+
+.info-container > span {
+    margin-bottom: .7em;
+    color: var(--clr-neutral-grayish-blue);
+    transition: all .2s ease-in-out;
+}
+
+.info-container > span:hover {
+    color: var(--clr-active-state-info-span);
+    cursor: pointer;
+}
+
+.social-container {
+    width: 9.375em;
+}
+
+.social-container > img {
+    transition: all .2s ease-in-out;
+}
+
+.social-container > img:hover {
+    filter: invert(62%) sepia(99%) saturate(309%) hue-rotate(121deg) brightness(87%) contrast(86%);
+    cursor: pointer;
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    div.container:nth-of-type(2) {
+        max-width: 100%;
+    }
+
+    .sub-container {
+        max-width: 800px;
+    }
+
+    div.container:nth-of-type(3) > .sub-container:nth-child(4) {
+        max-width: none;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 77%;
+    }
+
+    .feature-container {
+        width: 30ch;
+    }
+
+    .image-text-container {
+        justify-content: flex-start;
+    }
+
+    .image-text-container > .sub-container {
+        margin-left: 4.375em;
+    }
+
+    .sub-container > span,
+    .text-container > span,
+    .feature-container > span {
+        margin-bottom: .2em;
+    }
+
+    .sub-container > p,
+    .text-container > p,
+    .feature-container > p {
+        max-width: 60ch;
+    }
+
+    .image-container {
+        width: 48%;
+    }
+
+    .image-text-container {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .image-text-container > .sub-container {
+        align-items: flex-start;
+        text-align: start;
+        width: 40ch;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-container > button:first-child {
+        margin-bottom: 0;
+    }
+
+    .button-container > button {
+        width: 11em;
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+
+    .company-stack-container {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 2rem 8rem;
+        position: relative;
+    }
+
+    footer > .logo-container {
+        margin: 0;
+        margin-right: 7em;
+    }
+
+    .info-container {
+        margin: 0;
+        width: 27.625em;
+        display: grid;
+        grid-template-columns: repeat(3, calc(calc(27.625em - 4em * 2) / 3));
+        column-gap: 4em;
+        grid-template-areas: 
+        "FAQ PrivacyPolicy InstallGuide"
+        "ContactUs PressKit .";
+    }
+
+    .info-container > span {
+        margin: 0;
+    }
+
+    .info-container > span:nth-child(1) {
+        grid-area: FAQ;
+    }
+
+    .info-container > span:nth-child(2) {
+        grid-area: ContactUs;
+    }
+
+    .info-container > span:nth-child(3) {
+        grid-area: PrivacyPolicy;
+    }
+
+    .info-container > span:nth-child(4) {
+        grid-area: PressKit;
+    }
+
+    .info-container > span:nth-child(5) {
+        grid-area: InstallGuide;
+    }
+
+    .social-container {
+        position: absolute;
+        right: 8em;
+    }
+}
